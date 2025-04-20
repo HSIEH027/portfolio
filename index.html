@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>謝家誠作品集</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;500&display=swap');
+    body {
+      font-family: 'Noto Serif TC', serif;
+      background: linear-gradient(to bottom, #fffaf4, #f3f0ec);
+      color: #2c2c2c;
+      line-height: 1.9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4e4e4e;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    h1, h2, h3 {
+      font-weight: 500;
+    }
+    .section {
+      max-width: 980px;
+      margin: 3rem auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+    .section h2 {
+      font-size: 1.8rem;
+      border-left: 6px solid #c4a484;
+      padding-left: 1rem;
+      margin-bottom: 2rem;
+      color: #444;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #444;
+    }
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .about-text {
+      flex: 1 1 300px;
+      min-width: 260px;
+      order: 1;
+    }
+    .about-photo {
+      width: 250px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+      align-self: flex-start;
+      order: 2;
+      margin-top: -120px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .grid-2col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .img-style {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .card:hover .img-style {
+      transform: scale(1.06);
+    }
+
+    @media screen and (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .about-photo {
+        order: 0;
+        margin-top: 0;
+      }
+      .about-text {
+        order: 1;
+        width: 100%;
+      }
+      .grid-2col {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>謝家誠｜建築設計作品集</h1>
+    <p>關於我｜建築賞析｜平面與立體作品｜多元表現</p>
+  </header>
+
+  <!-- 關於我 -->
+  <section class="section">
+    <h2>關於我</h2>
+    <div class="about-container">
+      <div class="about-text">
+        <p><span class="highlight">姓名：</span>謝家誠<br>
+          <span class="highlight">生日：</span>2007.04.21（金牛座）<br>
+          <span class="highlight">學歷：</span>臺北市立大理高中｜南門國中｜萬大小學<br>
+          <span class="highlight">個人特質：</span>積極主動，樂於學習，溝通與團隊能力佳</p>
+        <p><span class="highlight">幹部經歷：</span>連續六學期健康股長</p>
+        <p><span class="highlight">就讀動機：</span><br>
+          小時候玩 Minecraft 開啟對建築的熱情，進一步學習設計與美術，期望用建築改變人居空間，帶來美感與溫度。</p>
+        <p><span class="highlight"><a href="plan.html" style="color: inherit; text-decoration: underline;">學習計畫：</a></span><br>
+          前期：學習建築史與空間設計｜中期：參與實作工作坊｜後期：整合專題與實習經驗｜未來：考取證照，投入綠建築創作</p>
+      </div>
+      <img src="個人照.jpg" alt="個人照片" class="about-photo">
+    </div>
+  </section>
+
+  <!-- 建築賞析 -->
+  <section class="section">
+    <h2>建築賞析</h2>
+    <div class="grid">
+      <div class="card">
+        <a href="hall.html">
+          <img src="中正紀念堂照片/中正紀念堂照片5.jpg" class="img-style" alt="中正紀念堂">
+          <h3>中正紀念堂</h3>
+          <p>融合中國傳統與現代技術，象徵「八德」與莊嚴氛圍，階梯與屋頂設計富文化含義。</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="post.html">
+          <img src="郵政博物館照片/郵政博物館外郵車.jpg" class="img-style" alt="郵政博物館">
+          <h3>郵政博物館</h3>
+          <p>現代主義建築風格，展現 60 年代台灣公共建築的簡約與實用性。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 立體作品 -->
+  <section class="section">
+    <h2>立體作品</h2>
+    <div class="grid-2col">
+      <div class="card">
+        <a href="becoming_star.html">
+          <img src="紙雕.jpg" class="img-style" alt="成為星星">
+          <h3>成為星星</h3>
+          <p>表現願意為愛付出一切的精神象徵，結合棉花與麥克筆。</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="fly.html">
+          <img src="摺紙照片/摺紙8.jpg" class="img-style" alt="自由飛翔">
+          <h3>自由飛翔</h3>
+          <p>滑翔在空中，突破重力束縛，象徵自由與勇氣。</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="temple.html">
+          <img src="好運宮照片/好運宮1.jpg" class="img-style" alt="好運宮">
+          <h3>好運宮</h3>
+          <p>以厚紙板製作的祈福空間，象徵對幸運的追求與信念。</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="house.html">
+          <img src="小組照片/小組房子8.jpg" class="img-style" alt="靜居小屋">
+          <h3>靜居小屋</h3>
+          <p>簡約建築與綠意空間融合，營造心靈寧靜的生活氛圍。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 平面作品 -->
+  <section class="section">
+    <h2>平面作品</h2>
+    <div class="grid">
+      <div class="card">
+        <a href="pray.html">
+          <img src="拼貼照片/拼貼.jpg" class="img-style" alt="祈禱的托尼">
+          <h3>祈禱的托尼</h3>
+          <p>混合媒材呈現追夢信念，表現對未來的執著與誠心。</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="lonely.html">
+          <img src="孤獨.jpg" class="img-style" alt="孤獨">
+          <h3>孤獨</h3>
+          <p>透過筆觸與構圖，呈現空間感與建築細節的靜謐氛圍。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 多元表現 -->
+  <section class="section">
+    <h2>多元表現</h2>
+    <div class="grid">
+      <div class="card">
+        <a href="architecture_exhibition.html">
+          <img src="看建築展照片/展覽111.jpg" class="img-style" alt="臨界探索">
+          <h3>物我交織的臨界</h3>
+          <p>展現建築與自然共生的深刻探索，代表作如 HARAKADO、富富話合。</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="world_exhibition.html">
+          <img src="看餛飩展照片/展覽21.jpg" class="img-style" alt="混沌序曲">
+          <h3>在混沌中建立序曲</h3>
+          <p>跨域聲光裝置藝術，挑戰觀眾感知界限與秩序混沌的邊界。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

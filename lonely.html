@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>孤獨</title>
+  <style>
+    body {
+      font-family: 'Noto Serif TC', serif;
+      background: #f3f0ec;
+      color: #2c2c2c;
+      padding: 2rem;
+      margin: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #444;
+      margin-bottom: 2rem;
+    }
+    .main-image {
+    width: 100%;
+    height: 400px;
+    object-fit: contain; /* 改這一行 */
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background-color: #f8f8f8; /* 可選：補背景避免留白突兀 */
+    transition: 0.3s ease;
+  }
+    .thumbnails {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .thumbnails img {
+      width: 100px;
+      height: 70px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: transform 0.3s ease, border 0.3s ease;
+      border: 2px solid transparent;
+    }
+    .thumbnails img:hover,
+    .thumbnails img.active {
+      transform: scale(1.05);
+      border: 2px solid #c4a484;
+    }
+    .description {
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>孤獨</h1>
+    <img src="孤獨.jpg" id="mainImg" class="main-image" alt="主圖">
+    
+
+    <div class="description">
+      <p>點 線 面 交織在一
+		起，隨筆指揮，遠處的
+		房屋，臨摹外在的建築
+		結構，採用線條的粗細
+		密合，並配合線條角度，呈現明暗變化。</p>
+	
+    </div>
+  </div>
+
+  <script>
+    function changeImage(thumb) {
+      const mainImg = document.getElementById('mainImg');
+      mainImg.src = thumb.src;
+
+      // 移除全部 active 樣式
+      document.querySelectorAll('.thumbnails img').forEach(img => {
+        img.classList.remove('active');
+      });
+      thumb.classList.add('active');
+    }
+  </script>
+</body>
+</html>

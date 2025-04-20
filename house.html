@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>靜居小屋</title>
+  <style>
+    body {
+      font-family: 'Noto Serif TC', serif;
+      background: #f3f0ec;
+      color: #2c2c2c;
+      padding: 2rem;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #444;
+      margin-bottom: 2rem;
+    }
+
+    .main-image-wrapper {
+      position: relative;
+    }
+
+    .main-image {
+      width: 100%;
+      height: 400px;
+      object-fit: contain;
+      border-radius: 10px;
+      background-color: #f8f8f8;
+      transition: 0.3s ease;
+    }
+
+    .main-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      width: 40px;
+      height: 60px;
+      cursor: pointer;
+      opacity: 0.3;
+      transition: 0.3s;
+    }
+
+    .main-arrow:hover {
+      opacity: 0.7;
+    }
+
+    .arrow-left {
+      left: -20px;
+    }
+
+    .arrow-right {
+      right: -20px;
+    }
+
+    .main-arrow svg {
+      width: 100%;
+      height: 100%;
+      fill: #666;
+    }
+
+    .thumbnails-wrapper {
+      position: relative;
+      margin: 2rem 0;
+    }
+
+    .thumbnails {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding: 0.5rem 2rem;
+      scroll-behavior: smooth;
+    }
+
+    .thumbnails::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .thumbnails::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 4px;
+    }
+
+    .thumbnails img {
+      width: 100px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .thumbnails img:hover,
+    .thumbnails img.active {
+      transform: scale(1.05);
+      border: 2px solid #c4a484;
+    }
+
+    .description {
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>靜居小屋</h1>
+
+    <div class="main-image-wrapper">
+      <button class="main-arrow arrow-left" onclick="switchMain(-1)">
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <img id="mainImg" class="main-image" src="小組照片/小組.jpg" alt="主圖" />
+      <button class="main-arrow arrow-right" onclick="switchMain(1)">
+        <svg viewBox="0 0 24 24"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+      </button>
+    </div>
+
+    <div class="thumbnails-wrapper">
+      <div class="thumbnails" id="thumbnailScroll">
+        <img src="小組照片/小組.jpg" class="active" onclick="changeImage(this)">
+        <img src="小組照片/小組房子1.jpg" onclick="changeImage(this)">
+        <img src="小組照片/小組房子2.png" onclick="changeImage(this)">
+        <img src="小組照片/小組房子3.jpg" onclick="changeImage(this)">
+        <img src="小組照片/小組房子4.jpg" onclick="changeImage(this)">
+        <img src="小組照片/小組房子5.jpg" onclick="changeImage(this)">
+        <img src="小組照片/小組房子6.jpg" onclick="changeImage(this)">
+        <img src="小組照片/小組房子7.jpg" onclick="changeImage(this)">
+        <img src="小組照片/小組房子8.jpg" onclick="changeImage(this)">
+        <img src="小組照片/IMG_0568.JPG" onclick="changeImage(this)">
+        <img src="小組照片/IMG_0569.JPG" onclick="changeImage(this)">
+      </div>
+    </div>
+
+    <div class="description">
+      <p>這件作品呈現一個幽靜的綠化空間，仿若世外桃源。小屋的設計以簡約為主，底部支架與草皮、池塘相映成趣，營造出和諧、寧靜的氛圍。透過石板路的引導，邀人走進這片安靜的小天地，遠離繁囂。</p>
+      <p>這件作品是跟其他組員一起合作的，我們拿到設計圖時，並沒有所謂的範本，而那張設計圖只有俯視視角一個畫面而已，於是最後討論決定要做一個建築。自作過程有些許耗時，但不影響我們對完作品的熱誠，且互相尊重每個人的創意，所以除了最大的成品以外，還多了大家的小巧思。</p>
+    </div>
+  </div>
+
+  <script>
+    const imageList = Array.from(document.querySelectorAll('.thumbnails img'));
+    let currentIndex = 0;
+
+    function changeImage(thumb) {
+      const mainImg = document.getElementById('mainImg');
+      mainImg.src = thumb.src;
+      imageList.forEach(img => img.classList.remove('active'));
+      thumb.classList.add('active');
+      currentIndex = imageList.indexOf(thumb);
+    }
+
+    function switchMain(direction) {
+      currentIndex = (currentIndex + direction + imageList.length) % imageList.length;
+      changeImage(imageList[currentIndex]);
+    }
+
+    // 滾輪支援左右滾動
+    document.getElementById('thumbnailScroll').addEventListener('wheel', function(e) {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        this.scrollBy({
+          left: e.deltaY,
+          behavior: 'smooth'
+        });
+      }
+    });
+
+	document.addEventListener('keydown', function (e) {
+  		if (e.key === 'ArrowRight') {
+    		switchMain(1);
+  		} else if (e.key === 'ArrowLeft') {
+    	switchMain(-1);
+  		}
+	});
+  </script>
+</body>
+</html>

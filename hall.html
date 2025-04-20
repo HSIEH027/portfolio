@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>中正紀念堂</title>
+  <style>
+    body {
+      font-family: 'Noto Serif TC', serif;
+      background: #f3f0ec;
+      color: #2c2c2c;
+      padding: 2rem;
+      margin: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #444;
+      margin-bottom: 2rem;
+    }
+    .main-image-wrapper {
+      position: relative;
+    }
+    .main-image {
+      width: 100%;
+      height: 400px;
+      object-fit: contain;
+      border-radius: 10px;
+      background-color: #f8f8f8;
+      transition: 0.3s ease;
+    }
+    .main-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      width: 40px;
+      height: 60px;
+      cursor: pointer;
+      opacity: 0.3;
+      transition: 0.3s;
+      z-index: 10;
+    }
+    .main-arrow:hover {
+      opacity: 0.7;
+    }
+    .arrow-left { left: -20px; }
+    .arrow-right { right: -20px; }
+    .main-arrow svg {
+      width: 100%;
+      height: 100%;
+      fill: #666;
+    }
+    .thumbnails-wrapper {
+      position: relative;
+      margin: 2rem 0;
+    }
+    .thumbnails {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding: 0.5rem 2rem;
+      scroll-behavior: smooth;
+    }
+    .thumbnails::-webkit-scrollbar {
+      height: 6px;
+    }
+    .thumbnails::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 4px;
+    }
+    .thumbnails img {
+      width: 100px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: 0.3s ease;
+      flex-shrink: 0;
+    }
+    .thumbnails img:hover,
+    .thumbnails img.active {
+      transform: scale(1.05);
+      border: 2px solid #c4a484;
+    }
+    .description p {
+  	text-indent: 2em;
+	}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>中正紀念堂</h1>
+
+    <div class="main-image-wrapper">
+      <button class="main-arrow arrow-left" onclick="switchMain(-1)">
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <img id="mainImg" class="main-image" src="中正紀念堂照片/中正紀念堂照片5.jpg" alt="主圖" />
+      <button class="main-arrow arrow-right" onclick="switchMain(1)">
+        <svg viewBox="0 0 24 24"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+      </button>
+    </div>
+
+    <div class="thumbnails-wrapper">
+      <div class="thumbnails" id="thumbnailScroll">
+        <img src="中正紀念堂照片/中正紀念堂照片5.jpg" class="active" onclick="changeImage(this)">
+        <img src="中正紀念堂照片/中正紀念堂自拍照片.jpg" onclick="changeImage(this)">
+        <img src="中正紀念堂照片/中正紀念堂照片2.jpg" onclick="changeImage(this)">
+        <img src="中正紀念堂照片/中正紀念堂照片3.jpg" onclick="changeImage(this)">
+        <img src="中正紀念堂照片/中正紀念堂照片4.jpg" onclick="changeImage(this)">
+        <img src="中正紀念堂照片/中正紀念堂照片5.jpg" onclick="changeImage(this)">
+		<img src="中正紀念堂照片/中正紀念堂照片6.jpg" onclick="changeImage(this)">
+		<img src="中正紀念堂照片/中正哥哥加天花板.jpg" onclick="changeImage(this)">
+      </div>
+    </div>
+
+    <div class="description">
+      <p>  中正紀念堂的建築融合了中國傳統宮殿風格與現代結構技術，象徵穩重與莊嚴。其設計由
+		楊卓成建築師負責，靈感來自北京的天壇，並採用傳統與現代工法相結合的方式建造。
+
+	  </p>
+	  <p>
+		  紀念堂本體是一座高約 70 公尺的四方形建築，屋頂為雙重藍色琉璃瓦攢尖頂，並帶有八
+		角造型，象徵中國傳統的「天圓地方」理念。</p>
+		<p>  雙重攢尖式藍瓦屋頂，取自中國宮殿建築，象徵高貴與莊重。
+		屋頂的八角形設計，對應「八德」( 忠、孝、仁、愛、信、義、和平 )，具有文化意義。</p>
+		<p>  紀念堂本體分為地上兩層、地下兩層</p>
+		<p>  紀念大廳：位於建築二樓，中央設置蔣介石銅像，高度約 6.3 公尺，由黃銅鑄造。銅像背
+		後刻有「倫理、民主、科學」，為三民主義的精神標誌。大廳內部高聳，天花板設有象徵性
+		的裝飾圖案，營造莊嚴氛圍。通往二樓大廳的樓梯共有 89 階，象徵蔣介石享年 89 歲。</p>
+		<p>  地下樓層設有展覽廳，展示蔣介石的生平、歷史文件、文物及相關史料。</p>
+		<p>  紀念堂正門為三座高大的拱門，稱為「大中至正門」，象徵公平正直的精神。</p>
+		<p>  自由廣場原名為中正紀念堂廣場，2007 年改為自由廣場。</p>
+		<p>  國家戲劇院與國家音樂廳兩座建築分列於紀念堂左右，屋頂為傳統宮殿式重簷黃瓦屋頂，
+		融合中國傳統建築與現代技術。為台灣最重要的表演藝術場館之一，定期舉辦音樂會、戲劇、
+		舞蹈表演等。</p>
+		<p>  小時候我們全家偶爾會來中正紀念堂看阿兵哥的交接儀式，讓我印象最深刻的是阿兵哥們
+		的整齊劃一，還有那個 89 街的階梯，每次上去都喘吁吁。直到我真正去了解這座紀念堂，
+		我才知道原來一座建築有這麼多的象徵及含意。</p>
+    </div>
+  </div>
+
+  <script>
+    const imageList = Array.from(document.querySelectorAll('.thumbnails img'));
+    let currentIndex = 0;
+
+    function changeImage(thumb) {
+      const mainImg = document.getElementById('mainImg');
+      mainImg.src = thumb.src;
+      imageList.forEach(img => img.classList.remove('active'));
+      thumb.classList.add('active');
+      currentIndex = imageList.indexOf(thumb);
+    }
+
+    function switchMain(direction) {
+      currentIndex = (currentIndex + direction + imageList.length) % imageList.length;
+      changeImage(imageList[currentIndex]);
+    }
+
+    document.getElementById('thumbnailScroll').addEventListener('wheel', function(e) {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        this.scrollBy({
+          left: e.deltaY,
+          behavior: 'smooth'
+        });
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') switchMain(1);
+      else if (e.key === 'ArrowLeft') switchMain(-1);
+    });
+  </script>
+</body>
+</html>

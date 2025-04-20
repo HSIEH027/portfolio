@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>學習計畫</title>
+  <style>
+    body {
+      font-family: 'Noto Serif TC', serif;
+      background: #f9f6f2;
+      color: #2c2c2c;
+      padding: 2rem;
+      margin: 0;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #444;
+      margin-bottom: 3rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      align-items: stretch;
+    }
+    .card {
+      background: white;
+      border: 1px solid #e5e5e5;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h2 {
+      font-size: 1.4rem;
+      color: #c4a484;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #e2dcd3;
+      padding-bottom: 0.5rem;
+    }
+    .card p {
+      text-indent: 2em;
+      line-height: 1.8;
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>我的學習計畫</h1>
+    <div class="grid">
+      <div class="card">
+        <h2>前期</h2>
+        <p>在前期，我將專注於建立建築設計的基礎知識，包
+			括建築史、設計原理和結構力學。同時，我會培養手
+			繪與數位繪圖技能，以便在設計過程中有效表達概念。
+			我計劃參與基礎設計課程 學習空間構成與功能配置，
+			並透過觀察和分析經典建築案例，加深對空間感和美
+			學的理解。</p>
+      </div>
+
+      <div class="card">
+        <h2>中期</h2>
+        <p>中期階段，我將進一步提升設計能力，專注於設計
+			概念的創新與落實。我會參加實踐性工作坊，與同學
+			合作完成小型設計專案，以培養團隊協作和問題解決
+			能力。此外，我將學習進階建築軟體操作，結合數位
+			模擬與視覺化技術，以更精確地呈現設計方案，並開
+			始涉略環境永續設計理念。</p>
+      </div>
+
+      <div class="card">
+        <h2>後期</h2>
+        <p>在後期，我計劃參與綜合設計課程，進行大型建築
+			專案的完整設計過程，從概念發想到施工圖繪製，並
+			考慮結構、安全及法規等現實因素。我會參與校外實
+			習，以增進對建築行業的認識，並提升專業技能。同
+			時，我將完善個人作品集，展示設計風格與能力，為
+			畢業後的職涯發展做好準備。</p>
+      </div>
+
+      <div class="card">
+        <h2>未來</h2>
+        <p>畢業後，我希望進入建築設計事務所工作，累積實
+			務經驗，並逐步考取建築師執照。我計劃持續關注建
+			築趨勢，如智慧建築和綠色設計，以拓寬專業視野。
+			此外，我希望未來能結合在地文化特色，創作具創新
+			性且富有意義的建築作品，為人們帶來更美好的生活
+			環境。</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
